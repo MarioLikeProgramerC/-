@@ -1,0 +1,69 @@
+#include<stdio.h>
+int main(void)
+{
+ // ここでいうポテトはフライドポテト。俺ポテト大好き。
+    int ramen,curry,potato,karaage,sushi;
+    int sum;
+    int end;
+    int scan;
+    int harai;
+    int turi;
+
+        ramen = 750;
+        curry = 550;
+        potato = 355;
+        karaage = 655;
+        sushi = 700;
+        sum = 0;
+        end = 0;
+        scan = 0;
+        turi = 0;
+
+        while(end == 0){
+            printf("商品をスキャンしてね！ 現在%d円",sum);
+            scanf("%d",&scan);
+            // スキャンする仕様どう考えても思いつかなかったからこれで。ごめんね。
+            switch(scan){
+                
+                case 1:
+                sum = sum + ramen + (ramen * 0.1);
+                break;
+
+                case 2:
+                sum = sum + curry + (curry * 0.1);
+                break;
+
+                case 3:
+                sum = sum + potato + (potato * 0.1);
+                break;
+
+                case 4:
+                sum = sum + karaage + (karaage * 0.1);
+                break;
+
+                case 5:
+                sum = sum + sushi + (sushi * 0.1);
+                break;
+
+                default:
+                end = 1;
+                break;
+                // え？高い？相場の値段わかんないんだからしょうがないって()
+            }
+
+        }
+        printf("合計%d円\n",sum);
+        printf("お支払い。お金を入れてね。");
+        scanf("%d",&harai);
+
+        if(harai > sum){
+            turi = harai - sum;
+        }
+
+        printf("お釣り%d円。\n",turi);
+        printf("あざっした～^^");
+
+
+        return 0;
+
+}
